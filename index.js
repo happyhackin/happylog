@@ -1,23 +1,24 @@
 require('clear')()
 const cj = require('color-json')
 
-let logId = 0
 
 let log = (data) => {
   if (typeof data != 'object')
-    return console.log('\nLOG_# [', logId++, ']', cj(JSON.stringify(data)) + '\n')
-  console.log('\nLOG_# [', logId++, ']')
+    return console.log(cj(JSON.stringify(data)) + '\n')
   Object.keys(data).forEach(key => {
     let value = data[key]
-    if(typeof value == 'object'){
+    if (value === undefined)
+      value = 'undefined'
+    if(value && typeof value == 'object'){
       let constructor = ''
       if(value.constructor)
         constructor = '[' + value.constructor.name + '] '
-      console.log('   ', constructor + key + ':', '\n    ' + cj(JSON.stringify(value)).split('\n').join('\n    ') + '\n')
+      console.log( constructor + key + ':', '\n' + cj(JSON.stringify(value)).split('\n').join('\n') + '\n')
     } else {
-      console.log('   ', key + ':', cj(JSON.stringify(value)) + '\n')
+      console.log( key + ':', cj(JSON.stringify(value)) + '\n')
     }
   })
 }
 
 module.exports = log
+
