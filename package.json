@@ -1,0 +1,17 @@
+{
+  "name": "happylog",
+  "version": "0.0.0",
+  "description": "log for use in happy hackin youtube videos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "slugbyte@slugbyte.com",
+  "license": "MIT",
+  "dependencies": {
+    "clear": "^0.1.0",
+    "color-json": "^2.0.0"
+  },
+  "devDependencies": {}
+}
