@@ -1,5 +1,5 @@
 {
-  "name": "happylog",
+  "name": "happyprint",
   "version": "0.2.0",
   "description": "logger for use in happy hackin youtube videos",
   "main": "index.js",
