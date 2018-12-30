@@ -1,6 +1,12 @@
 # CHANGELOG 
 
-## v0.1.1 
+## v0.2.0 
+* added testing
+* added travis.ci  
+* added a check for process.env.CLEAR
+* renamed to happyprint
+
+## v0.1.1 12/29/18
 * fixed changelog dates
 * added suport for undefined
 * removed loging of LOG ID

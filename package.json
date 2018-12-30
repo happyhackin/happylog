@@ -1,10 +1,14 @@
 {
   "name": "happylog",
-  "version": "0.1.1",
-  "description": "log for use in happy hackin youtube videos",
+  "version": "0.2.0",
+  "description": "logger for use in happy hackin youtube videos",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/happyhackin/happyprint.git"
   },
   "keywords": [],
   "author": "slugbyte@slugbyte.com",
@@ -13,5 +17,7 @@
     "clear": "^0.1.0",
     "color-json": "^2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "tape": "^4.9.2"
+  }
 }

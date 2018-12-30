@@ -1,24 +1,29 @@
-require('clear')()
 const cj = require('color-json')
 
+if(process.env.CLEAR) require('clear')()
 
-let log = (data) => {
-  if (typeof data != 'object')
-    return console.log(cj(JSON.stringify(data)) + '\n')
+let colorify = (value) => cj(JSON.stringify(value))
+
+let format = (data) => {
+  if (typeof data !== 'object' || data === null){
+    if (data === undefined) data = 'undefined'
+    return colorify(data) + '\n'
+  }
+  let result = ''
   Object.keys(data).forEach(key => {
     let value = data[key]
-    if (value === undefined)
-      value = 'undefined'
-    if(value && typeof value == 'object'){
+    if (value === undefined) value = 'undefined'
+    if(value && typeof value == 'object') {
       let constructor = ''
-      if(value.constructor)
-        constructor = '[' + value.constructor.name + '] '
-      console.log( constructor + key + ':', '\n' + cj(JSON.stringify(value)).split('\n').join('\n') + '\n')
+      if(value.constructor) constructor = '[' + value.constructor.name + '] '
+      result = constructor + key + ':\n' + colorify(value) + '\n'
     } else {
-      console.log( key + ':', cj(JSON.stringify(value)) + '\n')
+      result = key + ': ' +  colorify(value) + '\n'
     }
   })
+  return result
 }
 
-module.exports = log
+module.exports = (...args) => console.log(format(...args))
+module.exports.format = format
 
