@@ -1,5 +1,8 @@
 # CHANGELOG 
 
+## v0.2.1
+* fixed falure to accumulate prop strings bug
+
 ## v0.2.0 
 * added testing
 * added travis.ci  

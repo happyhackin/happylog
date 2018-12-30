@@ -1,6 +1,6 @@
 {
   "name": "happylog",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "logger for use in happy hackin youtube videos",
   "main": "index.js",
   "scripts": {

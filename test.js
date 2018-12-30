@@ -19,12 +19,14 @@ test(t => {
   t.equal(format({name: null}), 'name: ' + colorify(null) + '\n', 'prop with null')
   t.equal(format({name: undefined}), 'name: ' + colorify('undefined') + '\n', 'prop with undefined')
 
-  let temp = {one: 1, two: 'two'}
-  let expectedString = '[Object] temp:\n' + colorify(temp) + '\n'
-  t.equal(format({temp}), expectedString, 'prop with object', )
-  temp = ['one', 2, null]
-  expectedString = '[Array] temp:\n' + colorify(temp) + '\n'
-  t.equal(format({temp}), expectedString, 'prop with array')
+  let tempObject = {one: 1, two: 'two'}
+  let expectedObjectString = '[Object] tempObject:\n' + colorify(tempObject) + '\n'
+  t.equal(format({tempObject}), expectedObjectString, 'prop with object', )
+  let tempArray  = ['one', 2, null]
+  let expectedArrayString = '[Array] tempArray:\n' + colorify(tempArray) + '\n'
+  t.equal(format({tempArray}), expectedArrayString, 'prop with array')
+
+  t.equal(format({tempArray, tempObject}), expectedArrayString + expectedObjectString, 'prop with array')
 
   t.end()
 })

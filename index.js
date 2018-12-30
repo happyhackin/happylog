@@ -1,6 +1,5 @@
-const cj = require('color-json')
-
 if(process.env.CLEAR) require('clear')()
+const cj = require('color-json')
 
 let colorify = (value) => cj(JSON.stringify(value))
 
@@ -16,9 +15,9 @@ let format = (data) => {
     if(value && typeof value == 'object') {
       let constructor = ''
       if(value.constructor) constructor = '[' + value.constructor.name + '] '
-      result = constructor + key + ':\n' + colorify(value) + '\n'
+      result += constructor + key + ':\n' + colorify(value) + '\n'
     } else {
-      result = key + ': ' +  colorify(value) + '\n'
+      result += key + ': ' +  colorify(value) + '\n'
     }
   })
   return result
